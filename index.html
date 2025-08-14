@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Продажа кофе — AROMA</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f0ec;
+            color: #333;
+            text-align: center;
+            line-height: 1.6;
+        }
+        header {
+            padding: 20px;
+            background-color: #4e342e;
+            color: white;
+            font-size: 28px;
+        }
+        .carousel {
+            position: relative;
+            max-width: 800px;
+            margin: 20px auto;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+        .carousel img {
+            width: 100%;
+            display: none;
+        }
+        .carousel img.active {
+            display: block;
+        }
+        .offer, .author {
+            padding: 20px;
+            background-color: #ece2dd;
+            margin: 20px auto;
+            max-width: 800px;
+            border-radius: 8px;
+            text-align: left;
+        }
+        .offer h2, .author h2 {
+            color: #4e342e;
+            font-size: 24px;
+        }
+        .offer ul {
+            list-style: none;
+            padding: 0;
+        }
+        .offer ul li {
+            margin: 8px 0;
+        }
+        .author {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        .author img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        .buy-btn {
+            background-color: #6f4e37;
+            color: white;
+            padding: 12px 24px;
+            font-size: 18px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            margin: 20px 0;
+        }
+        .buy-btn:hover {
+            background-color: #5a3e2c;
+        }
+    </style>
+</head>
+<body>
+
+    <header>AROMA — Твой кофе с душой</header>
+
+    <div class="carousel">
+        <img src="https://picsum.photos/id/1060/800/400" class="active">
+        <img src="https://picsum.photos/id/1059/800/400">
+        <img src="https://picsum.photos/id/1058/800/400">
+        <img src="https://picsum.photos/id/1057/800/400">
+        <img src="https://picsum.photos/id/1056/800/400">
+    </div>
+
+    <div class="offer">
+        <h2>Почему наш кофе стоит попробовать:</h2>
+        <ul>
+            <li>Доставляем высококачественные обжаренные и зеленые зёрна — идеально для дома и кафе</li>
+            <li>Простой и понятный оффер: «Попробуй вкус, который вдохновляет»</li>
+            <li>Телефоны для связи: всегда готовы ответить на вопросы</li>
+            <li>Подробное описание преимуществ: от насыщенного аромата до работы с маленькими партиями</li>
+            <li>Прозрачность процесса — от выборки зёрен до обжарки и упаковки</li>
+        </ul>
+    </div>
+
+    <div class="author">
+        <img src="https://picsum.photos/id/1005/200/200" alt="Фото автора">
+        <div>
+            <h2>Об авторе</h2>
+            <p>Меня зовут <b>Алексей Кофеев</b>. Уже более 12 лет я обжариваю кофе и поставляю свежие зёрна для любителей и профессионалов. 
+               Моя миссия — показать, что чашка кофе может быть не просто напитком, а маленьким ритуалом радости. 
+               Я лично отбираю каждую партию зёрен, чтобы вы могли насладиться насыщенным вкусом и ароматом.</p>
+        </div>
+    </div>
+
+    <button class="buy-btn" onclick="alert('Спасибо за покупку!')">Купить</button>
+
+    <script>
+        const images = document.querySelectorAll('.carousel img');
+        let currentIndex = 0;
+        setInterval(() => {
+            images[currentIndex].classList.remove('active');
+            currentIndex = (currentIndex + 1) % images.length;
+            images[currentIndex].classList.add('active');
+        }, 3000);
+    </script>
+
+</body>
+</html>
